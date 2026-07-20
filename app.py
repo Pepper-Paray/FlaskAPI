@@ -31,7 +31,11 @@ def create_student():
     new_student = Student(name=data['name'])
     db.session.add(new_student)
     db.session.commit()
-    return jsonify({"message": "Student created!", "id": new_student.id}), 201
-
+    return {"message": "Student created!", "id": new_student.id}
+@app.route ('/', methods=['GET'])
+def create_health():
+ return {"message": "okay"}
 if __name__ == '__main__':
     app.run(debug=True)
+
+
